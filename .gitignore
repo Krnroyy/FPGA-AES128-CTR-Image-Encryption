@@ -1,0 +1,25 @@
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wcfg
+
+# Vivado generated directories
+.Xil/
+.cache/
+.gen/
+.hw/
+.ip_user_files/
+.runs/
+.sim/
+.srcs/
+
+# Vivado project files
+*.xpr
+
+# Temporary files
+*.tmp
+*.bak
+*~
