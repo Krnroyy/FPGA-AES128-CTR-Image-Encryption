@@ -1,0 +1,21 @@
+{
+  "source_file": "car.png",
+  "source_size": [
+    736,
+    1308
+  ],
+  "prepared_size": [
+    256,
+    256
+  ],
+  "pixel_format": "RGB888 row-major",
+  "image_bytes": 196608,
+  "aes_blocks": 12288,
+  "algorithm": "AES-128-CTR golden software reference",
+  "key_hex": "2B7E151628AED2A6ABF7158809CF4F3C",
+  "initial_counter_hex": "F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF",
+  "input_sha256": "aa237d9a507990a9144c055ace0f484b3f4c055b8ce5ecd9c4da8aa18ed861e4",
+  "cipher_sha256": "20a3d2aa8fae11e68c32b35be8ecdbc957697c1fa66f4c8c302470d1d28f46ef",
+  "recovered_sha256": "aa237d9a507990a9144c055ace0f484b3f4c055b8ce5ecd9c4da8aa18ed861e4",
+  "recovery_exact_match": true
+}

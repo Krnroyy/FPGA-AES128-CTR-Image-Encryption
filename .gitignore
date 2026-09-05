@@ -1,25 +1,44 @@
-# Vivado generated files
+# Vivado generated files and directories
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+vivado_project/
 *.jou
 *.log
 *.str
-*.pb
 *.wdb
-*.wcfg
+*.vcd
+*.dcp
+*.ltx
+*.bit
+*.xsa
 
-# Vivado generated directories
-.Xil/
-.cache/
-.gen/
-.hw/
-.ip_user_files/
-.runs/
-.sim/
-.srcs/
+# Vitis generated files and workspaces
+build/
+Debug/
+Release/
+_ide/
+.metadata/
+*.elf
+*.o
+*.a
 
-# Vivado project files
-*.xpr
+# Python generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
 
-# Temporary files
-*.tmp
-*.bak
-*~
+# Host-generated captures
+host/full_image_output/
+full_image_output/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
