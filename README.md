@@ -149,9 +149,7 @@ These image statistics support the absence of visible structure, but they do not
 ## Documentation
 
 - [Technical report (PDF)](docs/reports/ZCU104_AES_CTR_Technical_Report.pdf)
-- [Viva and interview guide](docs/INTERVIEW_GUIDE.md)
-- [Measured implementation results](RESULTS.md)
-- [GitHub Desktop upload instructions](docs/GITHUB_DESKTOP_UPLOAD.md)
+- [Measured implementation results](RESULTS.md) 
 
 ## Academic scope
 
