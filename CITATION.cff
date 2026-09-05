@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite this repository."
+title: "Hardware-Accelerated AES-128 CTR Image Encryption on ZCU104"
+type: software
+authors:
+  - family-names: "Roy"
+    given-names: "Karan"
+repository-code: "https://github.com/Krnroyy/FPGA-AES128-CTR-Image-Encryption"
+keywords:
+  - FPGA
+  - ZCU104
+  - AES-128
+  - CTR mode
+  - image encryption
+  - hardware-software co-design
+
