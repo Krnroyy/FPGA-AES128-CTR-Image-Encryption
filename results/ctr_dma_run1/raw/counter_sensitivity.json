@@ -1,0 +1,11 @@
+{
+  "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+  "same_preprocessed_input": true,
+  "counter_1_hex": "6BA1465814F4C0BDEBECCFBE00000000",
+  "counter_2_hex": "EBB921BBA68A87B6D06886D900000000",
+  "different_counters": true,
+  "npcr_percent": 99.60784912109375,
+  "uaci_percent": 33.46226311976614,
+  "ciphertext_1_sha256": "39a682315f3871ae7b37955e533c3b2da1946aaad264e0fff509e1c694ecd728",
+  "ciphertext_2_sha256": "925ecb5c99bf045a5bf46789466409306326d4eae2c5466bd74dd11206000d58"
+}

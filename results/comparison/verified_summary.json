@@ -1,0 +1,327 @@
+{
+  "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+  "verified_gcm": {
+    "gcm_transactions": 11,
+    "gcm_dataset_images": 10,
+    "unique_ivs": 11,
+    "all_ciphertexts_match_python": true,
+    "all_tags_match_python": true,
+    "all_exact_recoveries": true,
+    "all_tamper_rejections": true,
+    "all_rejected_buffers_zeroized": true,
+    "unauthenticated_plaintext_release_count": 0
+  },
+  "ctr_dma": {
+    "application": {
+      "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+      "architecture": "128-bit AXI-DMA plus AES-128 CTR AXI4-Stream",
+      "clock_mhz": 75.002,
+      "dataset_image_count": 10,
+      "image_format": "256x256 RGB888",
+      "image_bytes": 196608,
+      "all_recoveries_pass": true,
+      "encryption_time_us": {
+        "mean": 2186.0,
+        "population_stdev": 0.0,
+        "minimum": 2186.0,
+        "maximum": 2186.0
+      },
+      "encryption_throughput_kbps": {
+        "mean": 89939.0,
+        "population_stdev": 0.0,
+        "minimum": 89939.0,
+        "maximum": 89939.0
+      },
+      "decryption_time_us": {
+        "mean": 2175.0,
+        "population_stdev": 0.0,
+        "minimum": 2175.0,
+        "maximum": 2175.0
+      },
+      "decryption_throughput_kbps": {
+        "mean": 90394.0,
+        "population_stdev": 0.0,
+        "minimum": 90394.0,
+        "maximum": 90394.0
+      },
+      "encrypted_entropy_all": {
+        "mean": 7.999090143059833,
+        "population_stdev": 8.320317227913422e-05,
+        "minimum": 7.998939796818105,
+        "maximum": 7.99922657194305
+      },
+      "encrypted_corr_horizontal": {
+        "mean": 0.0004844478340926873,
+        "population_stdev": 0.003916164059283712,
+        "minimum": -0.004461849028271301,
+        "maximum": 0.0077183554690929464
+      },
+      "encrypted_corr_vertical": {
+        "mean": 0.0001425401993011293,
+        "population_stdev": 0.003835507646667628,
+        "minimum": -0.005244901661866881,
+        "maximum": 0.006125099094208888
+      },
+      "encrypted_corr_diagonal": {
+        "mean": -0.0001532120343226148,
+        "population_stdev": 0.0026271639583738664,
+        "minimum": -0.0026649273670056386,
+        "maximum": 0.005441318450804364
+      },
+      "encrypted_histogram_chi_square": {
+        "mean": 247.84895833333334,
+        "population_stdev": 22.908557514135886,
+        "minimum": 210.10416666666669,
+        "maximum": 289.65625
+      },
+      "counter_sensitivity": {
+        "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+        "same_preprocessed_input": true,
+        "counter_1_hex": "6BA1465814F4C0BDEBECCFBE00000000",
+        "counter_2_hex": "EBB921BBA68A87B6D06886D900000000",
+        "different_counters": true,
+        "npcr_percent": 99.60784912109375,
+        "uaci_percent": 33.46226311976614,
+        "ciphertext_1_sha256": "39a682315f3871ae7b37955e533c3b2da1946aaad264e0fff509e1c694ecd728",
+        "ciphertext_2_sha256": "925ecb5c99bf045a5bf46789466409306326d4eae2c5466bd74dd11206000d58"
+      }
+    },
+    "implementation": {
+      "luts": 17016,
+      "flip_flops": 11129,
+      "bram_36": 4,
+      "bram_18": 2,
+      "bram_tile_equivalent": 5.0,
+      "dsps": 0,
+      "wns_ns": 1.304,
+      "tns_ns": 0.0,
+      "period_ns": 13.333,
+      "clock_mhz": 75.002,
+      "power_total_w": 3.539,
+      "power_dynamic_w": 2.847,
+      "power_static_w": 0.693
+    },
+    "tamper_experiment": {
+      "experiment": "AES-128 CTR controlled ciphertext bit flip",
+      "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+      "architecture": "128-bit AXI-DMA plus AES-128 CTR AXI4-Stream",
+      "input_source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+      "image_format": "256x256 RGB888",
+      "counter_hex": "04CF7165EF4A52004BB6B20000000000",
+      "tamper_byte_index": 98688,
+      "tamper_pixel_x": 128,
+      "tamper_pixel_y": 128,
+      "tamper_channel": "R",
+      "tamper_xor_mask_hex": "01",
+      "ciphertext_changed_byte_count": 1,
+      "recovered_plaintext_changed_byte_count": 1,
+      "normal_recovery_pass": true,
+      "ciphertext_single_bit_flip_pass": true,
+      "plaintext_bit_propagation_pass": true,
+      "board_report_consistent": true,
+      "authentication_tag_present": false,
+      "tamper_detected_by_ctr": false,
+      "experiment_pass": true,
+      "input_sha256": "e73dc9648f2ed98ab9c130446be3c068cc8cef7face8e82bb409feed74b1b18e",
+      "normal_ciphertext_sha256": "8159dfa4846b52c3c63812d7652f3c080be65cf6cbf1c9e27d837d7ad5021dc4",
+      "normal_recovered_sha256": "e73dc9648f2ed98ab9c130446be3c068cc8cef7face8e82bb409feed74b1b18e",
+      "tampered_ciphertext_sha256": "716662c17307cd9bd52a4e2799a92af4b930f568017937e1481ba687f59c925f",
+      "tampered_recovered_sha256": "61dfb0aca463aa1847cddc0b000e61a096abb238915d6c44c650e2acf6634012",
+      "board_values": {
+        "IMAGE_FORMAT": "256 256 RGB888 196608",
+        "ARM_COUNTER_FREQUENCY_HZ": "100000000",
+        "READY_FOR_PACKET": "196628",
+        "IMAGE_RECEIVED": "196608",
+        "COUNTER": "04CF7165EF4A52004BB6B20000000000",
+        "ENCRYPTION_DMA_COUNTER_TICKS": "218665",
+        "ENCRYPTION_DMA_TIME_NS": "2186650",
+        "ENCRYPTION_DMA_TIME_US": "2186",
+        "ENCRYPTION_DMA_THROUGHPUT_KBPS": "89939",
+        "DECRYPTION_ORIGINAL_DMA_COUNTER_TICKS": "217528",
+        "DECRYPTION_ORIGINAL_DMA_TIME_NS": "2175280",
+        "DECRYPTION_ORIGINAL_DMA_TIME_US": "2175",
+        "DECRYPTION_ORIGINAL_DMA_THROUGHPUT_KBPS": "90394",
+        "CIPHERTEXT_BEGIN": "196608",
+        "RECOVERED_BEGIN": "196608",
+        "TAMPER_BYTE_INDEX": "98688",
+        "TAMPER_XOR_MASK": "01",
+        "CIPHERTEXT_BYTE_BEFORE": "78",
+        "CIPHERTEXT_BYTE_AFTER": "79",
+        "DECRYPTION_TAMPERED_DMA_COUNTER_TICKS": "217530",
+        "DECRYPTION_TAMPERED_DMA_TIME_NS": "2175300",
+        "DECRYPTION_TAMPERED_DMA_TIME_US": "2175",
+        "DECRYPTION_TAMPERED_DMA_THROUGHPUT_KBPS": "90394",
+        "TAMPER_CHANGED_PLAINTEXT_BYTES": "1",
+        "TAMPER_FIRST_CHANGED_BYTE": "98688",
+        "TAMPER_PROPAGATION_EXPECTED": "PASS",
+        "AUTHENTICATION_TAG": "NONE",
+        "CTR_TAMPER_DETECTION": "NO",
+        "TAMPERED_CIPHERTEXT_BEGIN": "196608",
+        "TAMPERED_RECOVERED_BEGIN": "196608"
+      }
+    }
+  },
+  "gcm_dma": {
+    "application": {
+      "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+      "architecture": "128-bit AXI-DMA plus AES-128-GCM AXI4-Stream",
+      "clock_mhz": 75.002,
+      "dataset_image_count": 10,
+      "board_transaction_count": 11,
+      "image_format": "256x256 RGB888",
+      "image_bytes": 196608,
+      "tag_bits": 128,
+      "iv_bits": 96,
+      "all_ivs_unique": true,
+      "all_ciphertexts_match_python_aesgcm": true,
+      "all_tags_match_python_aesgcm": true,
+      "all_exact_recoveries_pass": true,
+      "all_valid_tags_accepted_by_board": true,
+      "all_modified_ciphertexts_rejected_by_board": true,
+      "all_rejected_buffers_zeroized": true,
+      "all_runs_pass": true,
+      "encryption_time_us": {
+        "mean": 3010.0,
+        "population_stdev": 0.0,
+        "minimum": 3010.0,
+        "maximum": 3010.0
+      },
+      "encryption_throughput_kbps": {
+        "mean": 65318.0,
+        "population_stdev": 0.0,
+        "minimum": 65318.0,
+        "maximum": 65318.0
+      },
+      "decryption_time_us": {
+        "mean": 2999.0,
+        "population_stdev": 0.0,
+        "minimum": 2999.0,
+        "maximum": 2999.0
+      },
+      "decryption_throughput_kbps": {
+        "mean": 65557.0,
+        "population_stdev": 0.0,
+        "minimum": 65557.0,
+        "maximum": 65557.0
+      },
+      "tampered_decryption_time_us": {
+        "mean": 2999.0,
+        "population_stdev": 0.0,
+        "minimum": 2999.0,
+        "maximum": 2999.0
+      },
+      "tampered_decryption_throughput_kbps": {
+        "mean": 65557.0,
+        "population_stdev": 0.0,
+        "minimum": 65557.0,
+        "maximum": 65557.0
+      },
+      "encrypted_entropy_all": {
+        "mean": 7.99905228021571,
+        "population_stdev": 0.00010856052822431125,
+        "minimum": 7.9988737312697715,
+        "maximum": 7.99919994179008
+      },
+      "encrypted_corr_horizontal": {
+        "mean": -0.0008388435862473379,
+        "population_stdev": 0.0028127649684298213,
+        "minimum": -0.006264259244399289,
+        "maximum": 0.004291921255613138
+      },
+      "encrypted_corr_vertical": {
+        "mean": -0.0013054151956133162,
+        "population_stdev": 0.004890545464100216,
+        "minimum": -0.009902097435579097,
+        "maximum": 0.006824300396662808
+      },
+      "encrypted_corr_diagonal": {
+        "mean": 0.0015875023793893819,
+        "population_stdev": 0.004140778444965128,
+        "minimum": -0.005453754173268436,
+        "maximum": 0.00913416457607962
+      },
+      "encrypted_histogram_chi_square": {
+        "mean": 258.37734375,
+        "population_stdev": 29.387917669153225,
+        "minimum": 218.30208333333331,
+        "maximum": 306.48958333333337
+      },
+      "iv_sensitivity": {
+        "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+        "same_preprocessed_input": true,
+        "iv_1_hex": "01F11D933909A3BA0A9935A1",
+        "iv_2_hex": "D99DF7E7A794172A575D969F",
+        "different_ivs": true,
+        "different_tags": true,
+        "npcr_percent": 99.59309895833334,
+        "uaci_percent": 33.45869874642566,
+        "ciphertext_1_sha256": "d4397279622ccdbd666277d8f1f24cf253e95ae5046a023fcc442410fec9b11f",
+        "ciphertext_2_sha256": "6fefe321f5151e93b36a2db8f7befb64448c12f591011a69f817408576b03a13"
+      }
+    },
+    "implementation": {
+      "luts": 19593,
+      "flip_flops": 12587,
+      "bram_36": 4,
+      "bram_18": 2,
+      "bram_tile_equivalent": 5.0,
+      "dsps": 0,
+      "wns_ns": 0.187,
+      "tns_ns": 0.0,
+      "period_ns": 13.333,
+      "clock_mhz": 75.002,
+      "power_total_w": 3.625,
+      "power_dynamic_w": 2.932,
+      "power_static_w": 0.693
+    },
+    "raw_counter_measurements": {
+      "encryption": {
+        "count": 11,
+        "mean_ticks": 301031.63636363635,
+        "population_stdev_ticks": 9.975175799523784,
+        "minimum_ticks": 301027,
+        "maximum_ticks": 301063,
+        "range_us_at_100mhz": 0.36
+      },
+      "authenticated_decryption": {
+        "count": 11,
+        "mean_ticks": 299921.36363636365,
+        "population_stdev_ticks": 2.4962782214083603,
+        "minimum_ticks": 299920,
+        "maximum_ticks": 299929,
+        "range_us_at_100mhz": 0.09
+      },
+      "tampered_decryption": {
+        "count": 11,
+        "mean_ticks": 299922.1818181818,
+        "population_stdev_ticks": 3.85694607919935,
+        "minimum_ticks": 299920,
+        "maximum_ticks": 299934,
+        "range_us_at_100mhz": 0.14
+      }
+    }
+  },
+  "comparison": {
+    "encryption_latency_increase_percent": 37.69441903019213,
+    "encryption_throughput_change_percent": -27.375220983110772,
+    "lut_change_percent": 15.14456981664316,
+    "flip_flop_change_percent": 13.100907538862439,
+    "estimated_power_change_percent": 2.4300649901102034
+  },
+  "source_sha256": {
+    "results/ctr_dma_run1/raw/benchmark_runs.csv": "2f852b366c7e7d3d96f643faf45f744e4b5d342ab3999a456114999e4fe9e89f",
+    "results/ctr_dma_run1/raw/benchmark_summary.json": "25221b826ca7488e5e93c16353759e7a1a461e01c2e79811c58fec475f78856a",
+    "results/ctr_dma_run1/raw/counter_sensitivity.json": "64c946ee7f78d04c692eb3fe81c1eb5bc7014c938f6ddacd1c27cdbc53efffe5",
+    "results/ctr_dma_run1/raw/ctr_tamper_experiment.json": "a2147b295e3fe6206b3c81e1b67dc661088a00d561d263c8b32e7638817b4a84",
+    "results/ctr_dma_run1/reports/dma_power.rpt": "2db9af9748afc1f25d1079a31acbea43e39e02d6d6c283df4e478a5539311095",
+    "results/ctr_dma_run1/reports/dma_timing_summary.rpt": "e9afee6e457f989f04a596f6a760ee4409436aa13ab9a80065ad0016aa377fc4",
+    "results/ctr_dma_run1/reports/dma_utilization.rpt": "f3332912a774d04fcb4f4f37aa1d7291c559634db7128240f44fe30682feecef",
+    "results/gcm_batch_run1/raw/gcm_benchmark_runs.csv": "e7730e7b5db1ac11bff99d6e93dd36359fa9d3b22e93c2f8405c7b3797d0ee2a",
+    "results/gcm_batch_run1/raw/gcm_benchmark_summary.json": "e6c4332c6ee66b1b4f4b301944717b0b47ea31b5dc0f2fa11361c0882014b142",
+    "results/gcm_batch_run1/raw/iv_sensitivity.json": "515ae79eff7694c7d1b04899af36f1be309dd92f5dcbf3dd2c0015b912c2b238",
+    "results/gcm_batch_run1/raw/uart_transcript.txt": "e79bea21b19d61853383fcf0cd39ae089269d4cdb30d97454462f178844e4093",
+    "results/gcm_batch_run1/reports/gcm_dma_power.rpt": "04257b8830b2c3de93d35638b6e7e6f6ff97c534a49a62031d8751347e715509",
+    "results/gcm_batch_run1/reports/gcm_dma_timing_summary.rpt": "4d831d5fd2114485bbe393b4b0944a6068bc7b2e11e7e4707ea9937120b1098c",
+    "results/gcm_batch_run1/reports/gcm_dma_utilization.rpt": "58fe6e8e2cdedb717a8338bde5f391030d9b499c45f968a29e6250d4ba847ba7"
+  }
+}

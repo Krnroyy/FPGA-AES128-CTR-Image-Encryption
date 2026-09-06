@@ -1,0 +1,13 @@
+metric,unit,ctr_dma,gcm_dma,gcm_vs_ctr_percent
+Clock,MHz,75.002,75.002,0.0
+Encryption latency,us,2186.0,3010.0,37.69441903019213
+Decryption latency,us,2175.0,2999.0,37.88505747126436
+Encryption throughput,KB/s,89939.0,65318.0,-27.375220983110772
+Decryption throughput,KB/s,90394.0,65557.0,-27.47638117574175
+LUTs,count,17016,19593,15.14456981664316
+Flip-flops,count,11129,12587,13.100907538862439
+BRAM equivalent,36K tiles,5.0,5.0,0.0
+DSPs,count,0,0,
+WNS,ns,1.304,0.187,-85.65950920245399
+Estimated total power,W,3.539,3.625,2.4300649901102034
+Ciphertext entropy,bits/byte,7.999090143059833,7.99905228021571,-0.0004733393854317036

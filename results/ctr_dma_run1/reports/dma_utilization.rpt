@@ -1,0 +1,38 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Sun Sep  6 00:07:46 2026
+| Host         : karan running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 3 -file C:/ZCU104_AES_CTR_AXI_DMA_2026_1/dma_reports/dma_utilization.rpt
+| Design       : system_wrapper
+| Device       : xczu7ev-ffvc1156-2-e
+| Speed File   : -2
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+|      Instance      |                Module                | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++--------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+| system_wrapper     |                                (top) |      17016 |      16321 |     556 |  139 | 11129 |      4 |      2 |    0 |          0 |
+|   system_i         |                               system |      17016 |      16321 |     556 |  139 | 11129 |      4 |      2 |    0 |          0 |
+|     mem_smc        |                     system_mem_smc_0 |       2061 |       1520 |     532 |    9 |  3893 |      0 |      0 |    0 |          0 |
+|       inst         |             system_mem_smc_0_bd_1133 |       2061 |       1520 |     532 |    9 |  3893 |      0 |      0 |    0 |          0 |
+|     aes_ctr_axis_0 |              system_aes_ctr_axis_0_0 |      10222 |      10222 |       0 |    0 |  2211 |      0 |      0 |    0 |          0 |
+|       inst         | system_aes_ctr_axis_0_0_AES_CTR_AXIS |      10222 |      10222 |       0 |    0 |  2211 |      0 |      0 |    0 |          0 |
+|     axi_dma_0      |                   system_axi_dma_0_0 |       4122 |       3969 |      24 |  129 |  4296 |      4 |      2 |    0 |          0 |
+|       U0           |           system_axi_dma_0_0_axi_dma |       4122 |       3969 |      24 |  129 |  4296 |      4 |      2 |    0 |          0 |
+|     ctrl_smc       |                    system_ctrl_smc_0 |        599 |        599 |       0 |    0 |   696 |      0 |      0 |    0 |          0 |
+|       inst         |            system_ctrl_smc_0_bd_51f2 |        599 |        599 |       0 |    0 |   696 |      0 |      0 |    0 |          0 |
++--------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

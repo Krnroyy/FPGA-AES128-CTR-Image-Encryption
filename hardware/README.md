@@ -1,10 +1,25 @@
-# Vivado Hardware
+# Hardware
 
-The generated top is `system_wrapper`. The `system` block design contains:
+## Final GCM-DMA architecture
 
-- Zynq UltraScale+ Processing System: `zynq_ultra_ps_e_0`
-- AXI SmartConnect: `axi_smc`
-- Custom accelerator: `aes_ctr_axi_lite_0`
+`gcm_dma/rtl` contains the self-contained RTL used by the authenticated-encryption design.
 
-The processor accesses the accelerator through `M_AXI_HPM0_FPD` at base address `0xA0000000`. The second HPM master is disabled by the build script to avoid an unused-clock validation error.
+| Module | Responsibility |
+|---|---|
+| `AES_GCM_AXIS` | AXI4-Lite control, 128-bit AXI4-Stream data path, CTR processing, GHASH sequencing and tag decision |
+| `AES_GCM_OneBlock` | Standalone single-block GCM validation wrapper |
+| `GHASH_Mult32` | GF(2^128) authentication multiplication implementation |
+| `AES_128_Core` | AES-128 forward cipher |
+| `KeyExpansion` | AES round-key generation |
+| `SubBytes` | AES S-box substitution |
+| `ShiftRows` | AES row permutation |
+| `MixColumns` | AES finite-field column mixing |
+| `AddRoundKey` | State and round-key XOR |
 
+The Vivado block design adds Zynq UltraScale+ PS, AXI DMA, control and memory SmartConnect instances, reset logic and a 75.002 MHz PL clock. The GCM register block is mapped at `0xA0000000`; AXI DMA control is mapped at `0xA0010000`.
+
+Use the test scripts under `gcm_dma/sim` before running the implementation scripts under `gcm_dma/scripts`.
+
+## Historical baseline
+
+The top-level `rtl` and `scripts` directories retain the earlier AXI4-Lite AES-CTR design as a development baseline. The final measured comparison uses the separate AXI-DMA CTR evidence under `results/ctr_dma_run1`.

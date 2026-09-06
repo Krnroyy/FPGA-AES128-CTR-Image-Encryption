@@ -1,0 +1,74 @@
+{
+  "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+  "architecture": "128-bit AXI-DMA plus AES-128 CTR AXI4-Stream",
+  "clock_mhz": 75.002,
+  "dataset_image_count": 10,
+  "image_format": "256x256 RGB888",
+  "image_bytes": 196608,
+  "all_recoveries_pass": true,
+  "encryption_time_us": {
+    "mean": 2186.0,
+    "population_stdev": 0.0,
+    "minimum": 2186.0,
+    "maximum": 2186.0
+  },
+  "encryption_throughput_kbps": {
+    "mean": 89939.0,
+    "population_stdev": 0.0,
+    "minimum": 89939.0,
+    "maximum": 89939.0
+  },
+  "decryption_time_us": {
+    "mean": 2175.0,
+    "population_stdev": 0.0,
+    "minimum": 2175.0,
+    "maximum": 2175.0
+  },
+  "decryption_throughput_kbps": {
+    "mean": 90394.0,
+    "population_stdev": 0.0,
+    "minimum": 90394.0,
+    "maximum": 90394.0
+  },
+  "encrypted_entropy_all": {
+    "mean": 7.999090143059833,
+    "population_stdev": 8.320317227913422e-05,
+    "minimum": 7.998939796818105,
+    "maximum": 7.99922657194305
+  },
+  "encrypted_corr_horizontal": {
+    "mean": 0.0004844478340926873,
+    "population_stdev": 0.003916164059283712,
+    "minimum": -0.004461849028271301,
+    "maximum": 0.0077183554690929464
+  },
+  "encrypted_corr_vertical": {
+    "mean": 0.0001425401993011293,
+    "population_stdev": 0.003835507646667628,
+    "minimum": -0.005244901661866881,
+    "maximum": 0.006125099094208888
+  },
+  "encrypted_corr_diagonal": {
+    "mean": -0.0001532120343226148,
+    "population_stdev": 0.0026271639583738664,
+    "minimum": -0.0026649273670056386,
+    "maximum": 0.005441318450804364
+  },
+  "encrypted_histogram_chi_square": {
+    "mean": 247.84895833333334,
+    "population_stdev": 22.908557514135886,
+    "minimum": 210.10416666666669,
+    "maximum": 289.65625
+  },
+  "counter_sensitivity": {
+    "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+    "same_preprocessed_input": true,
+    "counter_1_hex": "6BA1465814F4C0BDEBECCFBE00000000",
+    "counter_2_hex": "EBB921BBA68A87B6D06886D900000000",
+    "different_counters": true,
+    "npcr_percent": 99.60784912109375,
+    "uaci_percent": 33.46226311976614,
+    "ciphertext_1_sha256": "39a682315f3871ae7b37955e533c3b2da1946aaad264e0fff509e1c694ecd728",
+    "ciphertext_2_sha256": "925ecb5c99bf045a5bf46789466409306326d4eae2c5466bd74dd11206000d58"
+  }
+}
