@@ -3,7 +3,7 @@ message: "If you use this project, please cite this repository."
 title: "FPGA AES-128-GCM Authenticated Image Security on ZCU104"
 type: software
 authors:
-  - family-names: "Roy"
+  - family-names: "Kumar"
     given-names: "Karan"
 repository-code: "https://github.com/Krnroyy/FPGA-AES128-CTR-Image-Encryption"
 keywords:

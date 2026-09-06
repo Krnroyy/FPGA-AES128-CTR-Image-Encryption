@@ -740,7 +740,7 @@ See the `LICENSE` file for details.
 
 ## Author
 
-Karan Roy
+Karan Kumar
 
 B.Tech in Electronics and Communication Engineering  
 Indian Institute of Information Technology Bhagalpur
