@@ -313,15 +313,15 @@
     "results/ctr_dma_run1/raw/benchmark_summary.json": "25221b826ca7488e5e93c16353759e7a1a461e01c2e79811c58fec475f78856a",
     "results/ctr_dma_run1/raw/counter_sensitivity.json": "64c946ee7f78d04c692eb3fe81c1eb5bc7014c938f6ddacd1c27cdbc53efffe5",
     "results/ctr_dma_run1/raw/ctr_tamper_experiment.json": "a2147b295e3fe6206b3c81e1b67dc661088a00d561d263c8b32e7638817b4a84",
-    "results/ctr_dma_run1/reports/dma_power.rpt": "2db9af9748afc1f25d1079a31acbea43e39e02d6d6c283df4e478a5539311095",
-    "results/ctr_dma_run1/reports/dma_timing_summary.rpt": "e9afee6e457f989f04a596f6a760ee4409436aa13ab9a80065ad0016aa377fc4",
+    "results/ctr_dma_run1/reports/dma_power.rpt": "018c3fcafb37135318a196e552da079b4263fdff39461e37cecc4ba62a5ac343",
+    "results/ctr_dma_run1/reports/dma_timing_summary.rpt": "86cf38edc94761df8741c61aeaa90797b55c5d2eeea7f3a6e4d032fd3f792c63",
     "results/ctr_dma_run1/reports/dma_utilization.rpt": "f3332912a774d04fcb4f4f37aa1d7291c559634db7128240f44fe30682feecef",
     "results/gcm_batch_run1/raw/gcm_benchmark_runs.csv": "e7730e7b5db1ac11bff99d6e93dd36359fa9d3b22e93c2f8405c7b3797d0ee2a",
     "results/gcm_batch_run1/raw/gcm_benchmark_summary.json": "e6c4332c6ee66b1b4f4b301944717b0b47ea31b5dc0f2fa11361c0882014b142",
     "results/gcm_batch_run1/raw/iv_sensitivity.json": "515ae79eff7694c7d1b04899af36f1be309dd92f5dcbf3dd2c0015b912c2b238",
-    "results/gcm_batch_run1/raw/uart_transcript.txt": "e79bea21b19d61853383fcf0cd39ae089269d4cdb30d97454462f178844e4093",
-    "results/gcm_batch_run1/reports/gcm_dma_power.rpt": "04257b8830b2c3de93d35638b6e7e6f6ff97c534a49a62031d8751347e715509",
-    "results/gcm_batch_run1/reports/gcm_dma_timing_summary.rpt": "4d831d5fd2114485bbe393b4b0944a6068bc7b2e11e7e4707ea9937120b1098c",
+    "results/gcm_batch_run1/raw/uart_transcript.txt": "cb07174f735c56b669fe710911b7fb90edbd0ff75b53f14d5289b87db60e016a",
+    "results/gcm_batch_run1/reports/gcm_dma_power.rpt": "e7b257bdc3f6153a6293157024c17adc06cbb77ce681d254dd665c0cc6009758",
+    "results/gcm_batch_run1/reports/gcm_dma_timing_summary.rpt": "77a7bc43e9925bf895f3f0007fd290e6dbb0c9042d43f2243d4d10c99a972f76",
     "results/gcm_batch_run1/reports/gcm_dma_utilization.rpt": "58fe6e8e2cdedb717a8338bde5f391030d9b499c45f968a29e6250d4ba847ba7"
   }
 }

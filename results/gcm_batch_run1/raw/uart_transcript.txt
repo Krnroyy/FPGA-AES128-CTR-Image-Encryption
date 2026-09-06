@@ -1,17 +1,3 @@
-Windows PowerShell
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-PS C:\ZCU104_AES_GCM_MULTI_IMAGE_BENCHMARK_2026_1\host> py -m pip install -r requirements.txt
-Requirement already satisfied: cryptography>=42.0 in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from -r requirements.txt (line 1)) (49.0.0)
-Requirement already satisfied: numpy>=1.26 in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from -r requirements.txt (line 2)) (2.2.6)
-Requirement already satisfied: Pillow>=10.0 in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from -r requirements.txt (line 3)) (12.1.1)
-Requirement already satisfied: pyserial>=3.5 in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from -r requirements.txt (line 4)) (3.5)
-Requirement already satisfied: cffi>=2.0.0 in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from cryptography>=42.0->-r requirements.txt (line 1)) (2.0.0)
-Requirement already satisfied: pycparser in C:\Users\ASUS\AppData\Local\Programs\Python\Python313\Lib\site-packages (from cffi>=2.0.0->cryptography>=42.0->-r requirements.txt (line 1)) (3.0)
-
-[notice] A new release of pip is available: 26.0.1 -> 26.2.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
-PS C:\ZCU104_AES_GCM_MULTI_IMAGE_BENCHMARK_2026_1\host> py benchmark_gcm_images.py "C:\ZCU104_DMA_DATASET" COM11 --limit 10 --output gcm_benchmark_output_run1
 Dataset images: 10
 Board transactions: 11
 Opening COM11 at 115200 baud
@@ -434,5 +420,3 @@ Mean encrypted entropy: 7.999052
 IV-sensitivity NPCR (%): 99.593099
 IV-sensitivity UACI (%): 33.458699
 OVERALL: PASS
-Results: C:\ZCU104_AES_GCM_MULTI_IMAGE_BENCHMARK_2026_1\host\gcm_benchmark_output_run1
-PS C:\ZCU104_AES_GCM_MULTI_IMAGE_BENCHMARK_2026_1\host>

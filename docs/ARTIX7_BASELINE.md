@@ -8,7 +8,7 @@ The design is written in Verilog and implemented using AMD Vivado 2026.1. The pr
 
 | Original Image | Encrypted Image | Recovered Image |
 |---|---|---|
-| ![Original](results/images/original_64x64.png) | ![Encrypted](results/images/encrypted_64x64.png) | ![Recovered](results/images/recovered_64x64.png) |
+| ![Original](../results/image/original_64x64.png) | ![Encrypted](../results/image/encrypted_64x64.png) | ![Recovered](../results/image/recovered_64x64.png) |
 
 Result:
 
@@ -131,7 +131,7 @@ FPGA-AES128-CTR-Image-Encryption/
 |   `-- security_metrics.py
 |
 |-- results/
-|   |-- images/
+|   |-- image/
 |   |-- data/
 |   |-- reports/
 |   `-- results_summary.md
@@ -497,7 +497,7 @@ The encrypted image shows near-zero adjacent-pixel correlation compared with the
 
 | Original Histogram | Encrypted Histogram |
 |---|---|
-| ![Original Histogram](results/images/hist_original.png) | ![Encrypted Histogram](results/images/hist_encrypted.png) |
+| ![Original Histogram](../results/image/hist_original.png) | ![Encrypted Histogram](../results/image/hist_encrypted.png) |
 
 ### Plaintext and Ciphertext Pixel Difference
 
@@ -740,7 +740,7 @@ See the `LICENSE` file for details.
 
 ## Author
 
-Karan Kumar
+Karan Roy
 
 B.Tech in Electronics and Communication Engineering  
 Indian Institute of Information Technology Bhagalpur
