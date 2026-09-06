@@ -1,0 +1,97 @@
+{
+  "board": "ZCU104 xczu7ev-ffvc1156-2-e",
+  "architecture": "128-bit AXI-DMA plus AES-128-GCM AXI4-Stream",
+  "clock_mhz": 75.002,
+  "dataset_image_count": 10,
+  "board_transaction_count": 11,
+  "image_format": "256x256 RGB888",
+  "image_bytes": 196608,
+  "tag_bits": 128,
+  "iv_bits": 96,
+  "all_ivs_unique": true,
+  "all_ciphertexts_match_python_aesgcm": true,
+  "all_tags_match_python_aesgcm": true,
+  "all_exact_recoveries_pass": true,
+  "all_valid_tags_accepted_by_board": true,
+  "all_modified_ciphertexts_rejected_by_board": true,
+  "all_rejected_buffers_zeroized": true,
+  "all_runs_pass": true,
+  "encryption_time_us": {
+    "mean": 3010.0,
+    "population_stdev": 0.0,
+    "minimum": 3010.0,
+    "maximum": 3010.0
+  },
+  "encryption_throughput_kbps": {
+    "mean": 65318.0,
+    "population_stdev": 0.0,
+    "minimum": 65318.0,
+    "maximum": 65318.0
+  },
+  "decryption_time_us": {
+    "mean": 2999.0,
+    "population_stdev": 0.0,
+    "minimum": 2999.0,
+    "maximum": 2999.0
+  },
+  "decryption_throughput_kbps": {
+    "mean": 65557.0,
+    "population_stdev": 0.0,
+    "minimum": 65557.0,
+    "maximum": 65557.0
+  },
+  "tampered_decryption_time_us": {
+    "mean": 2999.0,
+    "population_stdev": 0.0,
+    "minimum": 2999.0,
+    "maximum": 2999.0
+  },
+  "tampered_decryption_throughput_kbps": {
+    "mean": 65557.0,
+    "population_stdev": 0.0,
+    "minimum": 65557.0,
+    "maximum": 65557.0
+  },
+  "encrypted_entropy_all": {
+    "mean": 7.99905228021571,
+    "population_stdev": 0.00010856052822431125,
+    "minimum": 7.9988737312697715,
+    "maximum": 7.99919994179008
+  },
+  "encrypted_corr_horizontal": {
+    "mean": -0.0008388435862473379,
+    "population_stdev": 0.0028127649684298213,
+    "minimum": -0.006264259244399289,
+    "maximum": 0.004291921255613138
+  },
+  "encrypted_corr_vertical": {
+    "mean": -0.0013054151956133162,
+    "population_stdev": 0.004890545464100216,
+    "minimum": -0.009902097435579097,
+    "maximum": 0.006824300396662808
+  },
+  "encrypted_corr_diagonal": {
+    "mean": 0.0015875023793893819,
+    "population_stdev": 0.004140778444965128,
+    "minimum": -0.005453754173268436,
+    "maximum": 0.00913416457607962
+  },
+  "encrypted_histogram_chi_square": {
+    "mean": 258.37734375,
+    "population_stdev": 29.387917669153225,
+    "minimum": 218.30208333333331,
+    "maximum": 306.48958333333337
+  },
+  "iv_sensitivity": {
+    "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+    "same_preprocessed_input": true,
+    "iv_1_hex": "01F11D933909A3BA0A9935A1",
+    "iv_2_hex": "D99DF7E7A794172A575D969F",
+    "different_ivs": true,
+    "different_tags": true,
+    "npcr_percent": 99.59309895833334,
+    "uaci_percent": 33.45869874642566,
+    "ciphertext_1_sha256": "d4397279622ccdbd666277d8f1f24cf253e95ae5046a023fcc442410fec9b11f",
+    "ciphertext_2_sha256": "6fefe321f5151e93b36a2db8f7befb64448c12f591011a69f817408576b03a13"
+  }
+}

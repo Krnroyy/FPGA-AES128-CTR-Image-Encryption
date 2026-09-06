@@ -1,0 +1,12 @@
+{
+  "source": "C:\\ZCU104_DMA_DATASET\\images_1.png",
+  "same_preprocessed_input": true,
+  "iv_1_hex": "01F11D933909A3BA0A9935A1",
+  "iv_2_hex": "D99DF7E7A794172A575D969F",
+  "different_ivs": true,
+  "different_tags": true,
+  "npcr_percent": 99.59309895833334,
+  "uaci_percent": 33.45869874642566,
+  "ciphertext_1_sha256": "d4397279622ccdbd666277d8f1f24cf253e95ae5046a023fcc442410fec9b11f",
+  "ciphertext_2_sha256": "6fefe321f5151e93b36a2db8f7befb64448c12f591011a69f817408576b03a13"
+}

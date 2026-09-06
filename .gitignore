@@ -36,9 +36,18 @@ venv/
 # Host-generated captures
 host/full_image_output/
 full_image_output/
+gcm_output_run*/
+gcm_benchmark_output_run*/
+dma_image_output_run*/
+dynamic_image_output_run*/
+
+# Private datasets and keys
+dataset/
+datasets/
+*.key
+*.pem
 
 # Operating-system and editor files
 .DS_Store
 Thumbs.db
 .vscode/
-

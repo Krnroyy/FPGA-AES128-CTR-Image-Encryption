@@ -2,90 +2,118 @@
 
 ## Requirements
 
-- AMD/Xilinx ZCU104 board
-- Vivado 2026.1 with Zynq UltraScale+ device support and the ZCU104 board definition
+- AMD/Xilinx ZCU104 board and power supply
+- Micro-USB JTAG/UART connection
+- Vivado 2026.1 with Zynq UltraScale+ devices and ZCU104 board files
 - Vitis Embedded Development 2026.1
-- USB/JTAG-UART cable and ZCU104 power supply
-- Python 3 with `pyserial` and `Pillow`
+- Python 3 with packages from `host/gcm/requirements.txt`
 
-Use a short Windows directory without spaces or parentheses, for example `C:\ZCU104_AES_CTR`.
+Use a short Windows path without spaces, for example `C:\ZCU104_AES_GCM`.
 
-## 1. Build the Vivado hardware
+## 1. Optional RTL validation
 
-Open Vivado 2026.1 without opening an old project. In the Tcl Console, run:
+Open Vivado 2026.1 and use **Window > Tcl Console**.
 
 ```tcl
-source {C:/ZCU104_AES_CTR/hardware/scripts/build_zcu104_hardware_2026_1.tcl}
+source {C:/ZCU104_AES_GCM/hardware/gcm_dma/sim/run_oneblock_validation_2026_1.tcl}
 ```
 
-The script creates a new project, integrates the Zynq processing system, AXI SmartConnect, and custom AES RTL, generates the bitstream, and exports:
+Required ending: `PASS: AES_GCM_OneBlock all validation tests`.
 
-```text
-zcu104_real_image_aes_ctr.xsa
+Then run:
+
+```tcl
+source {C:/ZCU104_AES_GCM/hardware/gcm_dma/sim/run_axis_validation_2026_1.tcl}
 ```
 
-## 2. Create the Vitis platform
+Required ending: `PASS: AES_GCM_AXIS all validation tests`.
+
+## 2. Build the GCM-DMA hardware
+
+Run these commands in the Vivado Tcl console:
+
+```tcl
+source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/01_create_gcm_dma_project_2026_1.tcl}
+source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/02_build_gcm_bitstream_2026_1.tcl}
+source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/03_generate_gcm_reports_2026_1.tcl}
+```
+
+The second command can take a long time. Do not stop it while synthesis or implementation is active. Accept the build only if implementation completes, the bitstream is generated and WNS is nonnegative.
+
+## 3. Create the Vitis platform
 
 1. Open Vitis Unified IDE 2026.1.
-2. Set a new workspace outside the source repository.
+2. Select a workspace outside the Git repository.
 3. Create a Platform Component from the exported XSA.
-4. Select `standalone` and `psu_cortexa53_0`.
+4. Select `psu_cortexa53_0` and standalone OS.
 5. Build the platform.
 
-## 3. Create the Cortex-A53 application
+## 4. Create the applications
 
-1. Create an Empty Application Component using the platform.
-2. Add `main.c`, `car_256_rgb.h`, and `platform.h` from `software/vitis/src`.
-3. Ensure each source is listed only once in the application configuration.
-4. Build the application.
+Create two separate Empty Application components using the same platform.
 
-If Vitis reports a missing `platform.h`, use the supplied header. If it refers to `main (1).c`, remove the duplicate entry from `UserConfig.cmake` and retain only the real `main.c` path.
-
-## 4. Connect the board
-
-1. Connect the ZCU104 power supply.
-2. Connect the USB/JTAG-UART cable.
-3. Power on the board.
-4. Use the JTAG boot-mode setting used during the verified test.
-5. Confirm the board is visible to Vivado/Vitis hardware tools.
-
-## 5. Start the laptop receiver
-
-Install the dependencies once:
-
-```powershell
-py -m pip install pyserial pillow
-```
-
-Open PowerShell in the repository and run:
-
-```powershell
-py host\receive_full_image.py COM11
-```
-
-If the PS UART is assigned to another port, try COM13. COM12 was used by the earlier PL-UART test and may not be the correct port for this application.
-
-## 6. Launch the application
-
-Keep the Python receiver waiting, then use Vitis Run or Debug to program the hardware and launch the application on `psu_cortexa53_0`.
-
-Successful output contains:
+Single-image sources:
 
 ```text
-RECOVERY_PASS
-ZCU104_AES_CTR_DONE
-Original == recovered: PASS
+software/vitis_gcm/single_image/main_gcm_dma_dynamic.c
+software/vitis_gcm/single_image/platform.h
 ```
 
-The Python script saves encrypted and recovered PNG and BIN files under `full_image_output`.
+Batch sources:
 
-## Change the input image
+```text
+software/vitis_gcm/batch/main_gcm_dma_batch.c
+software/vitis_gcm/batch/platform.h
+```
 
-The current application contains a compiled RGB image. To use another image:
+Remove generated Hello World sources so each component contains only one `main()`. Build must end with `Build Finished successfully`.
 
-1. Put an image at the input path expected by `tools/prepare_real_image_assets.py` or update the `SOURCE` value.
-2. Run the preparation script.
-3. Replace `software/vitis/src/car_256_rgb.h` with the generated header.
-4. Clean and rebuild only the Vitis application.
-5. The Vivado bitstream does not need to be regenerated because the image is stored in processor software, not PL logic.
+## 5. Connect and program the board
 
+1. Set the ZCU104 to the JTAG boot setting used for the verified experiments.
+2. Connect board power and the JTAG/UART USB cable.
+3. Power on the board.
+4. Open the matching Python host command first.
+5. Launch the desired Vitis application once.
+
+After every power cycle, the volatile PL bitstream and bare-metal application must be programmed again. Persistent boot requires a separately prepared boot image.
+
+## 6. Single-image authenticated test
+
+```powershell
+cd C:\ZCU104_AES_GCM\host\gcm
+py -m pip install -r requirements.txt
+py send_receive_gcm_image.py "C:\path\to\image.png" COM11 --output gcm_output_run1
+```
+
+Keep PowerShell waiting and launch the single-image Vitis application. If COM11 is wrong, terminate the running Vitis session and retry with COM13.
+
+Required final line: `OVERALL: PASS`.
+
+## 7. Multi-image benchmark
+
+```powershell
+cd C:\ZCU104_AES_GCM\host\gcm
+py benchmark_gcm_images.py "C:\path\to\dataset" COM11 --limit 10 --output gcm_benchmark_output_run1
+```
+
+Launch the batch Vitis application once. The default experiment sends the selected dataset images and repeats the first image with a new IV.
+
+Required ending:
+
+```text
+All unique IVs: PASS
+All FPGA ciphertexts match Python: PASS
+All FPGA tags match Python: PASS
+All recoveries: PASS
+All board tamper rejections: PASS
+All rejected buffers zeroized: PASS
+OVERALL: PASS
+```
+
+## 8. Recompute repository figures
+
+```powershell
+py -m pip install -r requirements-analysis.txt
+py tools\analyze_results.py
+```
