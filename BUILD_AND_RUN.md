@@ -1,4 +1,4 @@
-# Build and Run Guide
+﻿# Build and Run Guide
 
 ## Requirements
 
@@ -14,28 +14,37 @@ Use a short Windows path without spaces, for example `C:\ZCU104_AES_GCM`.
 
 Open Vivado 2026.1 and use **Window > Tcl Console**.
 
+Baseline GCM-DMA validation:
+
 ```tcl
 source {C:/ZCU104_AES_GCM/hardware/gcm_dma/sim/run_oneblock_validation_2026_1.tcl}
-```
-
-Required ending: `PASS: AES_GCM_OneBlock all validation tests`.
-
-Then run:
-
-```tcl
 source {C:/ZCU104_AES_GCM/hardware/gcm_dma/sim/run_axis_validation_2026_1.tcl}
 ```
 
-Required ending: `PASS: AES_GCM_AXIS all validation tests`.
+Protected-chunk RTL validation:
 
-## 2. Build the GCM-DMA hardware
+```tcl
+source {C:/ZCU104_GCM_PROTECTED_CHUNK/hardware/gcm_protected_chunk/sim/run_protected_chunk_validation_2026_1.tcl}
+```
 
-Run these commands in the Vivado Tcl console:
+Required ending: `PASS: AES_GCM_ProtectedChunk all validation tests`.
+
+## 2. Build hardware
+
+### Baseline GCM-DMA:
 
 ```tcl
 source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/01_create_gcm_dma_project_2026_1.tcl}
 source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/02_build_gcm_bitstream_2026_1.tcl}
 source {C:/ZCU104_AES_GCM/hardware/gcm_dma/scripts/03_generate_gcm_reports_2026_1.tcl}
+```
+
+### Protected-chunk BRAM optimization:
+
+```tcl
+source {C:/ZCU104_GCM_PROTECTED_CHUNK/hardware/gcm_protected_chunk/scripts/01_create_protected_chunk_project_2026_1.tcl}
+source {C:/ZCU104_GCM_PROTECTED_CHUNK/hardware/gcm_protected_chunk/scripts/02_build_protected_chunk_bitstream_2026_1.tcl}
+source {C:/ZCU104_GCM_PROTECTED_CHUNK/hardware/gcm_protected_chunk/scripts/03_generate_protected_chunk_reports_2026_1.tcl}
 ```
 
 The second command can take a long time. Do not stop it while synthesis or implementation is active. Accept the build only if implementation completes, the bitstream is generated and WNS is nonnegative.
@@ -50,7 +59,7 @@ The second command can take a long time. Do not stop it while synthesis or imple
 
 ## 4. Create the applications
 
-Create two separate Empty Application components using the same platform.
+Create Empty Application components using the platform.
 
 Single-image sources:
 
@@ -64,6 +73,13 @@ Batch sources:
 ```text
 software/vitis_gcm/batch/main_gcm_dma_batch.c
 software/vitis_gcm/batch/platform.h
+```
+
+Protected-chunk sources:
+
+```text
+software/vitis_gcm/protected_chunk/main_gcm_dma_protected_chunk.c
+software/vitis_gcm/protected_chunk/platform.h
 ```
 
 Remove generated Hello World sources so each component contains only one `main()`. Build must end with `Build Finished successfully`.
@@ -111,7 +127,25 @@ All rejected buffers zeroized: PASS
 OVERALL: PASS
 ```
 
-## 8. Recompute repository figures
+## 8. Protected-chunk test and board run
+
+Run the offline protocol verification suite:
+
+```powershell
+py host/gcm/protected_chunk/test_chunk_protocol_offline.py
+```
+
+Run the protected-chunk board execution script using `host/gcm/protected_chunk/run_gcm_protected_chunk.py`:
+
+```powershell
+py host/gcm/protected_chunk/run_gcm_protected_chunk.py "C:/path/to/image.png" COM11 --size 256x256 --sequence 101 --output protected_chunk_256_run1
+```
+
+Launch the `software/vitis_gcm/protected_chunk/` application on the board.
+
+Required ending: `OVERALL: PASS`.
+
+## 9. Recompute repository figures
 
 ```powershell
 py -m pip install -r requirements-analysis.txt

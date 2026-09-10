@@ -1,4 +1,4 @@
-# Vivado generated files and directories
+﻿# Vivado generated files and directories
 .Xil/
 *.cache/
 *.gen/
@@ -40,6 +40,8 @@ gcm_output_run*/
 gcm_benchmark_output_run*/
 dma_image_output_run*/
 dynamic_image_output_run*/
+protected_chunk_*_run*/
+host/gcm/protected_chunk/*_run*/
 
 # Private datasets and keys
 dataset/
