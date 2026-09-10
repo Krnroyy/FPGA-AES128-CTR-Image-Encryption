@@ -1,4 +1,4 @@
-# Verified Experimental Results
+﻿# Verified Experimental Results
 
 All values in this document come from the raw files under `results/`. Run `py tools/analyze_results.py` to recreate the comparison CSV, evidence hashes and figures.
 
@@ -99,7 +99,31 @@ The controlled CTR experiment demonstrated malleability: modifying one ciphertex
 
 The central engineering trade-off is therefore measurable: approximately 27% lower throughput and 15% more LUTs provide authenticated encryption and controlled plaintext release.
 
-## 7. Evidence locations
+## 7. Protected-chunk BRAM optimization
+
+The protected-chunk milestone introduces an on-chip buffer (`ProtectedChunkMemory_BRAM.v`) to store chunk ciphertext before authentication, eliminating external DDR release pre-verification.
+
+Refactoring the protected buffer memory to a synchronous simple-dual-port BRAM primitive dramatically reduced programmable-logic utilization:
+
+| Metric | LUT baseline | BRAM optimized |
+|---|---:|---:|
+| Protected memory LUTs | 58,392 | 86 |
+| RAMB36 | 0 | 2 |
+| RAMB18 | 0 | 0 |
+| WNS | +0.313 ns | +0.975 ns |
+| WHS | +0.013 ns | +0.002 ns |
+| Total power | 4.000 W | 3.602 W |
+| Dynamic power | 3.305 W | 2.909 W |
+| Static power | 0.696 W | 0.693 W |
+
+Physical ZCU104 board validation verified complete exact recovery and tamper rejection across chunked workloads:
+- **17×19 payload**: 1/1 chunk PASS
+- **256×256 payload**: 48/48 chunks PASS
+- **512×512 payload**: 192/192 chunks PASS
+
+Physical raw evidence remains local and is not committed in this documentation update. Measured validation values are transcribed into the documentation and must not be altered. See [docs/PROTECTED_CHUNK.md](docs/PROTECTED_CHUNK.md) for full protocol and implementation documentation.
+
+## 8. Evidence locations
 
 - `results/gcm_batch_run1/raw/`: 11-run CSV, JSON summaries and UART transcript
 - `results/gcm_batch_run1/reports/`: GCM timing, utilization and power reports

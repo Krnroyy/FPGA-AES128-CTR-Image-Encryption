@@ -1,4 +1,4 @@
-# Hardware
+﻿# Hardware
 
 ## Final GCM-DMA architecture
 
@@ -19,6 +19,21 @@
 The Vivado block design adds Zynq UltraScale+ PS, AXI DMA, control and memory SmartConnect instances, reset logic and a 75.002 MHz PL clock. The GCM register block is mapped at `0xA0000000`; AXI DMA control is mapped at `0xA0010000`.
 
 Use the test scripts under `gcm_dma/sim` before running the implementation scripts under `gcm_dma/scripts`.
+
+Note: `gcm_dma` remains the original baseline AES-GCM DMA architecture.
+
+## Protected-chunk BRAM architecture
+
+`gcm_protected_chunk/rtl` contains the protected-chunk AES-GCM design with on-chip ciphertext buffer locking.
+
+| Module | Responsibility |
+|---|---|
+| `ProtectedChunkBuffer_AXIS.v` | AXI4-Stream interface, chunk locking controller, 2-pass replay control, and zeroization logic |
+| `ProtectedChunkMemory_BRAM.v` | Synchronous simple-dual-port BRAM primitive storing up to 4096 bytes of chunk ciphertext |
+
+The BRAM implementation refactors protected ciphertext storage to enable block-RAM inference, utilizing **86 LUTs** and **2 RAMB36 blocks** (compared to 58,392 LUTs in the pre-optimization baseline).
+
+Use the validation script `hardware/gcm_protected_chunk/sim/run_protected_chunk_validation_2026_1.tcl` before executing the build scripts under `hardware/gcm_protected_chunk/scripts/`.
 
 ## Historical baseline
 
