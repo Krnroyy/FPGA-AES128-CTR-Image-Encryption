@@ -1,0 +1,17 @@
+{
+  "stage": "paired_release_policy_ablation",
+  "expected_profile": "STAGE2_GUARD",
+  "overall_pass": true,
+  "results": [
+    "ABLATION_RESULT AUTHENTICATED_CONTROL EXACT_21_BYTES",
+    "ABLATION_RESULT RAW_DECRYPT_VALID_TAG BLOCKED_PROBE_UNCHANGED",
+    "ABLATION_RESULT RAW_DECRYPT_BAD_TAG BLOCKED_PROBE_UNCHANGED"
+  ],
+  "state_snapshots": [
+    "ABLATION_STATE RAW_DECRYPT_VALID_TAG GUARD 52470100 BUFFER 00000841 GCM 00000108 S2MM 00000000",
+    "ABLATION_STATE RAW_DECRYPT_BAD_TAG GUARD 52470100 BUFFER 00000841 GCM 00000108 S2MM 00000000"
+  ],
+  "errors": [],
+  "scope": "Trusted provisioned context; identical prohibited raw-decrypt command stream; firmware-observed DMA status and 64-byte destination probe.",
+  "interpretation": "Stage 1 exposure is an expected consequence of bypassing trusted firmware sequencing, not a claimed AES-GCM flaw. Stage 2 should block that command sequence."
+}

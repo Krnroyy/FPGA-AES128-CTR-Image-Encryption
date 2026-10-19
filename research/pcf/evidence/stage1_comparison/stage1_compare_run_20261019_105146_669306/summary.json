@@ -1,0 +1,362 @@
+{
+  "stage": "stage1_trusted_firmware_matched_benchmark",
+  "overall_pass": true,
+  "suite_seed": 20261019,
+  "sweep_passed": [],
+  "sweep_expected_count": 0,
+  "benchmark_sample_count": 217,
+  "counter_hz": 100000000,
+  "counter_read_overhead_ticks": 1,
+  "compiler_optimization_enabled": 1,
+  "compiler": [
+    "13.4.0"
+  ],
+  "errors": [],
+  "scope": "Firmware status and payload-plus-64-byte destination probes; no independent DDR bus monitor.",
+  "timing_scope": "CPU-observed DMA/crypto/software orchestration; no UART inside intervals. Initialization outside total; validation gaps included in total. Not pure hardware throughput.",
+  "statistics": [
+    {
+      "bytes": 16,
+      "samples": 31,
+      "capture_us": {
+        "min": 4.33,
+        "p5": 4.34,
+        "median": 4.34,
+        "p95": 4.355,
+        "max": 4.36
+      },
+      "auth_us": {
+        "min": 7.19,
+        "p5": 7.19,
+        "median": 7.19,
+        "p95": 7.19,
+        "max": 7.19
+      },
+      "release_us": {
+        "min": 9.23,
+        "p5": 9.235,
+        "median": 9.24,
+        "p95": 9.24,
+        "max": 9.25
+      },
+      "cleanup_us": {
+        "min": 18.94,
+        "p5": 18.95,
+        "median": 18.96,
+        "p95": 18.975,
+        "max": 18.98
+      },
+      "total_us": {
+        "min": 41.28,
+        "p5": 41.29,
+        "median": 41.31,
+        "p95": 41.47,
+        "max": 41.54
+      },
+      "validation_us": {
+        "min": 1.56,
+        "p5": 1.56,
+        "median": 1.57,
+        "p95": 1.7349999999999999,
+        "max": 1.78
+      },
+      "capture_auth_release_median_us": 20.77,
+      "capture_auth_release_median_MBps": 0.7703418391911411,
+      "total_including_cleanup_and_validation_median_MBps": 0.38731541999515856
+    },
+    {
+      "bytes": 64,
+      "samples": 31,
+      "capture_us": {
+        "min": 4.33,
+        "p5": 4.34,
+        "median": 4.34,
+        "p95": 4.35,
+        "max": 4.35
+      },
+      "auth_us": {
+        "min": 7.75,
+        "p5": 7.75,
+        "median": 7.75,
+        "p95": 7.75,
+        "max": 7.75
+      },
+      "release_us": {
+        "min": 10.12,
+        "p5": 10.12,
+        "median": 10.12,
+        "p95": 10.135000000000002,
+        "max": 10.14
+      },
+      "cleanup_us": {
+        "min": 18.38,
+        "p5": 18.39,
+        "median": 18.4,
+        "p95": 18.41,
+        "max": 18.42
+      },
+      "total_us": {
+        "min": 42.84,
+        "p5": 42.85,
+        "median": 42.87,
+        "p95": 42.925,
+        "max": 43.11
+      },
+      "validation_us": {
+        "min": 2.24,
+        "p5": 2.24,
+        "median": 2.26,
+        "p95": 2.3049999999999997,
+        "max": 2.51
+      },
+      "capture_auth_release_median_us": 22.21,
+      "capture_auth_release_median_MBps": 2.8815848716794235,
+      "total_including_cleanup_and_validation_median_MBps": 1.4928854676930254
+    },
+    {
+      "bytes": 256,
+      "samples": 31,
+      "capture_us": {
+        "min": 4.33,
+        "p5": 4.33,
+        "median": 4.35,
+        "p95": 4.36,
+        "max": 4.69
+      },
+      "auth_us": {
+        "min": 10.59,
+        "p5": 10.59,
+        "median": 10.84,
+        "p95": 10.85,
+        "max": 10.85
+      },
+      "release_us": {
+        "min": 13.21,
+        "p5": 13.21,
+        "median": 13.22,
+        "p95": 13.31,
+        "max": 13.32
+      },
+      "cleanup_us": {
+        "min": 18.42,
+        "p5": 18.42,
+        "median": 18.45,
+        "p95": 18.96,
+        "max": 18.96
+      },
+      "total_us": {
+        "min": 51.81,
+        "p5": 52.03,
+        "median": 52.29,
+        "p95": 52.675,
+        "max": 52.71
+      },
+      "validation_us": {
+        "min": 5.18,
+        "p5": 5.18,
+        "median": 5.22,
+        "p95": 5.425,
+        "max": 5.53
+      },
+      "capture_auth_release_median_us": 28.41,
+      "capture_auth_release_median_MBps": 9.010911650827174,
+      "total_including_cleanup_and_validation_median_MBps": 4.8957735704723655
+    },
+    {
+      "bytes": 512,
+      "samples": 31,
+      "capture_us": {
+        "min": 4.67,
+        "p5": 4.67,
+        "median": 4.67,
+        "p95": 4.68,
+        "max": 4.68
+      },
+      "auth_us": {
+        "min": 14.48,
+        "p5": 14.48,
+        "median": 14.48,
+        "p95": 14.51,
+        "max": 14.51
+      },
+      "release_us": {
+        "min": 17.18,
+        "p5": 17.18,
+        "median": 17.19,
+        "p95": 17.2,
+        "max": 17.21
+      },
+      "cleanup_us": {
+        "min": 18.42,
+        "p5": 18.42,
+        "median": 18.43,
+        "p95": 18.985,
+        "max": 18.99
+      },
+      "total_us": {
+        "min": 63.6,
+        "p5": 63.63,
+        "median": 63.84,
+        "p95": 64.305,
+        "max": 64.36
+      },
+      "validation_us": {
+        "min": 8.84,
+        "p5": 8.844999999999999,
+        "median": 8.88,
+        "p95": 9.055,
+        "max": 9.1
+      },
+      "capture_auth_release_median_us": 36.35,
+      "capture_auth_release_median_MBps": 14.085281980742778,
+      "total_including_cleanup_and_validation_median_MBps": 8.020050125313283
+    },
+    {
+      "bytes": 1024,
+      "samples": 31,
+      "capture_us": {
+        "min": 5.01,
+        "p5": 5.01,
+        "median": 5.02,
+        "p95": 5.04,
+        "max": 5.39
+      },
+      "auth_us": {
+        "min": 22.32,
+        "p5": 22.32,
+        "median": 22.32,
+        "p95": 22.33,
+        "max": 22.35
+      },
+      "release_us": {
+        "min": 24.7,
+        "p5": 24.7,
+        "median": 24.7,
+        "p95": 24.73,
+        "max": 24.74
+      },
+      "cleanup_us": {
+        "min": 18.52,
+        "p5": 18.52,
+        "median": 18.96,
+        "p95": 18.98,
+        "max": 18.99
+      },
+      "total_us": {
+        "min": 86.96,
+        "p5": 86.99000000000001,
+        "median": 87.48,
+        "p95": 87.875,
+        "max": 88.03
+      },
+      "validation_us": {
+        "min": 16.4,
+        "p5": 16.41,
+        "median": 16.46,
+        "p95": 16.82,
+        "max": 17.0
+      },
+      "capture_auth_release_median_us": 52.06,
+      "capture_auth_release_median_MBps": 19.6696119861698,
+      "total_including_cleanup_and_validation_median_MBps": 11.705532693187013
+    },
+    {
+      "bytes": 2048,
+      "samples": 31,
+      "capture_us": {
+        "min": 6.03,
+        "p5": 6.03,
+        "median": 6.04,
+        "p95": 6.05,
+        "max": 6.05
+      },
+      "auth_us": {
+        "min": 37.72,
+        "p5": 37.72,
+        "median": 37.72,
+        "p95": 37.73,
+        "max": 37.73
+      },
+      "release_us": {
+        "min": 40.1,
+        "p5": 40.105000000000004,
+        "median": 40.12,
+        "p95": 40.14,
+        "max": 40.24
+      },
+      "cleanup_us": {
+        "min": 18.53,
+        "p5": 18.549999999999997,
+        "median": 18.58,
+        "p95": 18.97,
+        "max": 18.97
+      },
+      "total_us": {
+        "min": 133.48,
+        "p5": 133.485,
+        "median": 133.59,
+        "p95": 134.04500000000002,
+        "max": 134.22
+      },
+      "validation_us": {
+        "min": 31.03,
+        "p5": 31.045,
+        "median": 31.1,
+        "p95": 31.33,
+        "max": 31.37
+      },
+      "capture_auth_release_median_us": 83.88,
+      "capture_auth_release_median_MBps": 24.41583214115403,
+      "total_including_cleanup_and_validation_median_MBps": 15.330488809042592
+    },
+    {
+      "bytes": 4096,
+      "samples": 31,
+      "capture_us": {
+        "min": 7.69,
+        "p5": 7.69,
+        "median": 7.7,
+        "p95": 7.715,
+        "max": 7.72
+      },
+      "auth_us": {
+        "min": 68.24,
+        "p5": 68.24,
+        "median": 68.24,
+        "p95": 68.25,
+        "max": 68.25
+      },
+      "release_us": {
+        "min": 70.66,
+        "p5": 70.96,
+        "median": 70.98,
+        "p95": 70.99,
+        "max": 70.99
+      },
+      "cleanup_us": {
+        "min": 18.69,
+        "p5": 18.69,
+        "median": 18.94,
+        "p95": 18.97,
+        "max": 18.97
+      },
+      "total_us": {
+        "min": 225.97,
+        "p5": 226.01,
+        "median": 226.43,
+        "p95": 227.17,
+        "max": 227.43
+      },
+      "validation_us": {
+        "min": 60.35,
+        "p5": 60.37,
+        "median": 60.68,
+        "p95": 61.275,
+        "max": 61.55
+      },
+      "capture_auth_release_median_us": 146.92,
+      "capture_auth_release_median_MBps": 27.8791178872856,
+      "total_including_cleanup_and_validation_median_MBps": 18.089475776178066
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+cryptography>=42
+pyserial>=3.5

@@ -1,0 +1,218 @@
+{
+  "stage": "rtl_release_interlock_stage2",
+  "started_utc": "2026-10-19T03:59:07.263755+00:00",
+  "cases": [
+    {
+      "name": "valid",
+      "result": "ACCEPT",
+      "pass": true,
+      "uart_plaintext_bytes": 969,
+      "header_hex": "52435633030103010011001303c9000000010064e3b49a5823a8f78200000000",
+      "payload_sha256": "e6050a74a2ec454d088dca247e57b8f3e47811cfa0d0e8c971a09909adec752b",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2839",
+        "RX_AUTH_TIME_NS 28390",
+        "RX_AUTH_TIME_US 28",
+        "RX_AUTH_THROUGHPUT_KBPS 34131",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_AUTH_ACCEPTED",
+        "RX_RELEASE_COUNTER_TICKS 2632",
+        "RX_RELEASE_TIME_NS 26320",
+        "RX_RELEASE_TIME_US 26",
+        "RX_RELEASE_THROUGHPUT_KBPS 36816",
+        "RX_PLAINTEXT_BEGIN 969",
+        "RX_PLAINTEXT_END",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE ACCEPT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "ciphertext_first",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c90000000100656359675b67f3b05000000000",
+      "payload_sha256": "87586e298e50dca3f36e05099b002d4f83b905bdb6c89b52b20588bd3bb8e30b",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2776",
+        "RX_AUTH_TIME_NS 27760",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 34906",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "ciphertext_middle",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c90000000100669311429f6677bcb300000000",
+      "payload_sha256": "6e19d4d905e3b24033ccb918b9a4f207569093a938d392e9fd5d6b9be302ac66",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2771",
+        "RX_AUTH_TIME_NS 27710",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 34969",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "ciphertext_last",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c9000000010067c0f993e0b35e295400000000",
+      "payload_sha256": "bd42400a3edbbebd054ae7656b9dd5a623019a66b922fe0f187762f345155d6c",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2768",
+        "RX_AUTH_TIME_NS 27680",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35007",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "tag",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c90000000100681de05d312a669aa300000000",
+      "payload_sha256": "b5a863e1970db16be0100ac04f801273a52b5271b1ccbcd518df52ca649b9936",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2767",
+        "RX_AUTH_TIME_NS 27670",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35019",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "iv",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c900000001006960357ffb8db96f7700000000",
+      "payload_sha256": "cf17e3b1657e0f8ab312532b2a5d9ffdb08e9db7af4befdf11191afdd32d2583",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2766",
+        "RX_AUTH_TIME_NS 27660",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35032",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "aad",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010013001103c900000001006ac9e628f5d781056800000000",
+      "payload_sha256": "8e83c23e3839d2c2cab5b66a736505867106c91f0b671f3c85f5dcf5fa119d75",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2765",
+        "RX_AUTH_TIME_NS 27650",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35045",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "wrong_key",
+      "result": "REJECT",
+      "pass": true,
+      "uart_plaintext_bytes": 0,
+      "header_hex": "52435633030103010011001303c900000001006bf08192703b86dc4d00000000",
+      "payload_sha256": "4dcff5baffd55b69368dedc4d34d347cf7b424fe19a19ca668cd5de3366a7c29",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2765",
+        "RX_AUTH_TIME_NS 27650",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35045",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_REJECT AUTH",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE REJECT",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "malformed_length",
+      "result": "HEADER_REJECT",
+      "pass": true,
+      "observed_status": [
+        "RX_HEADER_REJECT PAYLOAD_SIZE",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "replay_accepted_frame",
+      "result": "HEADER_REJECT",
+      "pass": true,
+      "observed_status": [
+        "RX_HEADER_REJECT SEQUENCE_REPLAY",
+        "RX_READY_HEADER 32"
+      ]
+    },
+    {
+      "name": "valid_after_rejections",
+      "result": "ACCEPT",
+      "pass": true,
+      "uart_plaintext_bytes": 969,
+      "header_hex": "52435633030103010011001303c9000000010078a2978ebab93791af00000000",
+      "payload_sha256": "ae186fbbf14d5ca0f4631de3308b50730adc7934567d6e2e472652a4c1e2c1a5",
+      "observed_status": [
+        "RX_READY_CIPHERTEXT 969 TAG_BYTES 16",
+        "RX_AUTH_COUNTER_TICKS 2765",
+        "RX_AUTH_TIME_NS 27650",
+        "RX_AUTH_TIME_US 27",
+        "RX_AUTH_THROUGHPUT_KBPS 35045",
+        "RX_AUTH_PROBE_UNCHANGED",
+        "RX_AUTH_ACCEPTED",
+        "RX_RELEASE_COUNTER_TICKS 2656",
+        "RX_RELEASE_TIME_NS 26560",
+        "RX_RELEASE_TIME_US 26",
+        "RX_RELEASE_THROUGHPUT_KBPS 36483",
+        "RX_PLAINTEXT_BEGIN 969",
+        "RX_PLAINTEXT_END",
+        "RX_BUFFERS_ZEROIZED",
+        "RX_TRANSACTION_DONE ACCEPT",
+        "RX_READY_HEADER 32"
+      ]
+    }
+  ],
+  "overall_pass": true,
+  "scope": "UART output and firmware-reported probe/cleanup; no independent DDR bus monitor"
+}
