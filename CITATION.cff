@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Kumar"
     given-names: "Karan"
-repository-code: "https://github.com/Krnroyy/FPGA-AES128-CTR-Image-Encryption"
+repository-code: "https://github.com/Krnroyy/fpga-aes128-gcm-image-encryption"
 keywords:
   - FPGA
   - ZCU104
